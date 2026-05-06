@@ -1,0 +1,6 @@
+@OctofitTracker_HostAddress = http://localhost:5008
+
+GET {{OctofitTracker_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
