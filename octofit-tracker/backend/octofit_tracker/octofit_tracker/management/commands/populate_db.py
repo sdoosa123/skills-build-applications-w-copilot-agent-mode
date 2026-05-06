@@ -1,4 +1,5 @@
 from django.core.management.base import BaseCommand
+from django.contrib.auth.hashers import make_password
 from octofit_tracker.models import User, Team, Activity, LeaderboardEntry, Workout
 
 
@@ -15,11 +16,11 @@ class Command(BaseCommand):
 
         self.stdout.write('Creating users...')
         users_data = [
-            {'username': 'spider_man', 'email': 'peter.parker@mergington.edu', 'password': 'spidey123'},
-            {'username': 'iron_man', 'email': 'tony.stark@mergington.edu', 'password': 'ironman123'},
-            {'username': 'black_widow', 'email': 'natasha.romanoff@mergington.edu', 'password': 'widow123'},
-            {'username': 'thor', 'email': 'thor.odinson@mergington.edu', 'password': 'mjolnir123'},
-            {'username': 'captain_america', 'email': 'steve.rogers@mergington.edu', 'password': 'shield123'},
+            {'username': 'spider_man', 'email': 'peter.parker@mergington.edu', 'password': make_password('spidey123')},
+            {'username': 'iron_man', 'email': 'tony.stark@mergington.edu', 'password': make_password('ironman123')},
+            {'username': 'black_widow', 'email': 'natasha.romanoff@mergington.edu', 'password': make_password('widow123')},
+            {'username': 'thor', 'email': 'thor.odinson@mergington.edu', 'password': make_password('mjolnir123')},
+            {'username': 'captain_america', 'email': 'steve.rogers@mergington.edu', 'password': make_password('shield123')},
         ]
         users = []
         for data in users_data:

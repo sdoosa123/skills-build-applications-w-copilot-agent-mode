@@ -4,7 +4,7 @@ from djongo import models
 class User(models.Model):
     username = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-    password = models.CharField(max_length=100)
+    password = models.CharField(max_length=128)
 
     class Meta:
         db_table = 'users'
